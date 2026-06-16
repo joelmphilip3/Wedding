@@ -698,9 +698,9 @@
   /* ── FLOATING MUSIC BUTTON ── */
   .music-toggle {
     position: fixed !important;
-    top: max(18px, env(safe-area-inset-top)) !important;
+    top: auto !important;
     right: max(18px, env(safe-area-inset-right)) !important;
-    bottom: auto !important;
+    bottom: max(18px, env(safe-area-inset-bottom)) !important;
     left: auto !important;
     z-index: 2147483647 !important;
     width: 58px;
@@ -815,7 +815,7 @@
     .bible-verse { margin-top: 14px; padding: 14px 14px; font-size: 15px; line-height: 1.45; }
     section { padding: 64px 18px; }
     .premium-card, .family-card { padding: 28px 20px; }
-    .music-toggle { top: max(14px, env(safe-area-inset-top)) !important; right: max(14px, env(safe-area-inset-right)) !important; bottom: auto !important; width: 52px; height: 52px; }
+    .music-toggle { top: auto !important; right: max(14px, env(safe-area-inset-right)) !important; bottom: max(14px, env(safe-area-inset-bottom)) !important; width: 52px; height: 52px; }
     .music-icon { width: 34px; height: 34px; font-size: 19px; }
   }
 </style>
