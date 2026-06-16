@@ -23,7 +23,11 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--ivory);
+    background:
+      radial-gradient(circle at 20% 15%, rgba(201,168,76,0.10), transparent 28%),
+      radial-gradient(circle at 85% 10%, rgba(107,30,46,0.07), transparent 24%),
+      linear-gradient(135deg, rgba(255,255,255,0.55) 25%, transparent 25%) 0 0 / 18px 18px,
+      var(--ivory);
     color: var(--text);
     font-family: 'Jost', sans-serif;
     font-weight: 300;
@@ -41,7 +45,7 @@
     text-align: center;
     background: linear-gradient(160deg, var(--wine-dark) 0%, var(--wine) 55%, #8C3050 100%);
     overflow: hidden;
-    padding: 24px 24px 28px;
+    padding: 22px 24px 28px;
   }
 
   /* Petal canvas */
@@ -75,16 +79,21 @@
   .hero-content { position: relative; z-index: 2; max-width: 960px; width: 100%; }
 
   .bible-verse {
-    max-width: 760px;
-    margin: 14px auto 0;
-    padding: 12px 16px;
-    border: 1px solid rgba(201,168,76,0.35);
-    border-radius: 6px;
-    background: rgba(255,255,255,0.07);
-    color: rgba(255,248,236,0.9);
+    max-width: 780px;
+    margin: 18px auto 0;
+    padding: 18px 22px;
+    border-top: 1px solid rgba(201,168,76,0.65);
+    border-bottom: 1px solid rgba(201,168,76,0.65);
+    border-left: 1px solid rgba(201,168,76,0.18);
+    border-right: 1px solid rgba(201,168,76,0.18);
+    border-radius: 10px;
+    background: rgba(250,246,239,0.10);
+    color: rgba(255,248,236,0.94);
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(15px, 2.4vw, 18px);
-    line-height: 1.45;
+    font-size: clamp(15px, 2.2vw, 18px);
+    line-height: 1.55;
+    font-style: italic;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.12);
   }
 
   .bible-verse strong {
@@ -94,10 +103,158 @@
     font-size: 10px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     font-weight: 500;
+    font-style: normal;
   }
 
+  .bible-verse::before,
+  .bible-verse::after {
+    content: '';
+    display: block;
+    width: 72px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 12px;
+  }
+
+  .bible-verse::after { margin: 12px auto 0; }
+
+  .family-lines {
+    max-width: 760px;
+    margin: 28px auto 0;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .family-card {
+    padding: 24px 22px;
+    border: 1px solid rgba(201,168,76,0.35);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.75);
+    box-shadow: 0 18px 45px rgba(74,17,32,0.08);
+  }
+
+  .family-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--wine-dark);
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .family-card p {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text-muted);
+    font-size: 19px;
+    line-height: 1.55;
+  }
+
+  .family-and {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 32px;
+  }
+
+  .premium-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1040px;
+    margin: 52px auto 0;
+  }
+
+  .premium-card {
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(201,168,76,0.35);
+    border-radius: 10px;
+    padding: 34px 26px;
+    text-align: center;
+    box-shadow: 0 18px 45px rgba(74,17,32,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 64px;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .premium-card h3 {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  .premium-card .premium-date {
+    font-family: 'Playfair Display', serif;
+    color: var(--wine-dark);
+    font-size: 24px;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .premium-card p {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text-muted);
+    font-size: 19px;
+    line-height: 1.55;
+  }
+
+  .map-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 11px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--gold);
+    color: var(--wine-dark);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: rgba(201,168,76,0.08);
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .map-button:hover {
+    transform: translateY(-2px);
+    background: rgba(201,168,76,0.16);
+  }
+
+  .closing-blessing {
+    background: linear-gradient(160deg, var(--wine-dark), var(--wine));
+    color: #FFF8EC;
+    text-align: center;
+    padding: 72px 24px;
+  }
+
+  .closing-blessing p:first-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 4vw, 36px);
+    line-height: 1.45;
+    font-style: italic;
+    color: rgba(255,248,236,0.92);
+  }
+
+  .closing-blessing p:last-child {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 48px);
+    color: var(--gold-light);
+    margin-top: 14px;
+  }
 
   .eyebrow {
     font-family: 'Jost', sans-serif;
@@ -388,12 +545,32 @@
   }
   .reveal.visible { opacity: 1; transform: none; }
 
+  @media (max-width: 800px) {
+    .family-lines,
+    .premium-details-grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .family-and { font-size: 24px; }
+  }
+
   @media (max-width: 600px) {
-    .countdown { gap: 14px; }
-    .count-number { font-size: 28px; min-width: 52px; padding: 7px 8px; }
-    .hero-photo img { width: auto; max-width: min(190px, 58vw); height: auto; max-height: 28vh; }
+    .hero { justify-content: flex-start; padding: 18px 16px 24px; }
+    .eyebrow { font-size: clamp(10px, 3.2vw, 14px); letter-spacing: 1.2px; }
     .hero-names { font-size: clamp(30px, 10vw, 48px); }
-    .event-pill { font-size: 10px; padding: 8px 12px; }
+    .hero-date { font-size: 18px; }
+    .hero-venue { font-size: 10px; letter-spacing: 2px; line-height: 1.7; }
+    .hero-photo { margin-top: 12px; }
+    .hero-photo img { width: auto; max-width: min(190px, 62vw); height: auto; max-height: 25vh; }
+    .countdown { gap: 10px; margin-top: 16px; }
+    .count-number { font-size: 25px; min-width: 48px; padding: 7px 8px; }
+    .count-label { font-size: 9px; letter-spacing: 2px; }
+    .event-summary { gap: 10px; margin-top: 16px; }
+    .event-pill { font-size: 9px; padding: 8px 10px; letter-spacing: 1px; }
+    .bible-verse { margin-top: 14px; padding: 14px 14px; font-size: 15px; line-height: 1.45; }
+    section { padding: 64px 18px; }
+    .premium-card, .family-card { padding: 28px 20px; }
   }
 </style>
 </head>
@@ -455,43 +632,66 @@
   </div>
 </section>
 
-<!-- ═══ COUPLE INTRO ═══ -->
+<!-- ═══ FAMILY INTRO ═══ -->
 <section class="details-section" style="background:var(--cream);">
   <div class="section-inner reveal">
-    <p class="section-eyebrow">A Love Story</p>
+    <p class="section-eyebrow">Together With Their Families</p>
     <h2 class="section-title">Two Hearts, One Journey</h2>
     <p class="section-body">
-      With joy and gratitude, our families invite you to witness and celebrate the sacred union of two souls as they begin a beautiful new chapter together — in the presence of God, family, and cherished friends.
+      With joy and gratitude, our families invite you to witness and celebrate the sacred union of Joel and Libina as they begin a beautiful new chapter together — in the presence of God, family, and cherished friends.
     </p>
+
+    <div class="family-lines">
+      <div class="family-card reveal">
+        <h3>Joel</h3>
+        <p>Son of<br>Mr. Philip Mathew<br>and Mrs. Maryamma Philip</p>
+      </div>
+      <div class="family-and">&amp;</div>
+      <div class="family-card reveal">
+        <h3>Libina</h3>
+        <p>Daughter of<br>Mr. Lalu George<br>and Mrs. Bindu Lalu</p>
+      </div>
+    </div>
   </div>
 </section>
 
 
-<!-- ═══ DETAILS ═══ -->
+<!-- ═══ EVENT DETAILS ═══ -->
 <section class="details-section reveal">
   <div class="section-inner">
-    <p class="section-eyebrow">Ceremony Details</p>
-    <h2 class="section-title">Save the Date</h2>
+    <p class="section-eyebrow">Celebration Details</p>
+    <h2 class="section-title">Save the Dates</h2>
   </div>
-  <div class="details-grid">
-    <div class="detail-card reveal">
-      <span class="detail-icon">📅</span>
-      <h3>Date</h3>
-      <p>Sunday<br>03.01.2027<br>11 AM IST</p>
+
+  <div class="premium-details-grid">
+    <div class="premium-card reveal">
+      <h3>Engagement</h3>
+      <div class="premium-date">31st December 2026<br>11 AM</div>
+      <p>Venue to be decided<br><span style="font-size:17px;">Details can be updated later</span></p>
     </div>
-    <div class="detail-card reveal">
-      <span class="detail-icon">⛪</span>
-      <h3>Venue</h3>
-      <p>Mar Lazarus Orthodox<br>Valiyapally<br>Pathanapuram, Kerala</p>
+
+    <div class="premium-card reveal">
+      <h3>Wedding Ceremony</h3>
+      <div class="premium-date">3rd January 2027<br>11 AM IST</div>
+      <p>Mar Lazarus Orthodox Valiyapally<br>Pathanapuram, Kerala, India</p>
+      <a class="map-button" href="https://www.google.com/maps/place/Mar+Lazarus+Orthodox+Valiyapally/@9.0977894,76.8513028,17z/data=!3m1!4b1!4m6!3m5!1s0x3b0672e94f188b1f:0x8c8735cf6f14fd15!8m2!3d9.0977894!4d76.8538777!16s%2Fg%2F1tdkf1wg?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">View Wedding Location</a>
     </div>
-    <div class="detail-card reveal">
-      <span class="detail-icon">🕯️</span>
-      <h3>Ceremony</h3>
-      <p>Holy Matrimony<br>Orthodox Christian<br>Rite</p>
+
+    <div class="premium-card reveal">
+      <h3>Reception</h3>
+      <div class="premium-date">3rd January 2027<br>3 PM</div>
+      <p>Morning Star Convention Center<br>Elamanoor, Kerala, India</p>
+      <a class="map-button" href="https://www.google.com/maps/place/Morning+Star+Convention+Center,+Elamanoor/@34.2028252,-93.0388842,7z/data=!4m6!3m5!1s0x3b0612a3592bf1c3:0xaee73cf59d8015a6!8m2!3d9.1338875!4d76.8086252!16s%2Fg%2F11cnddn0tt?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">View Reception Location</a>
     </div>
   </div>
 </section>
 
+
+<!-- ═══ CLOSING ═══ -->
+<section class="closing-blessing">
+  <p>Your prayers, presence, and blessings mean the world to us.</p>
+  <p>With love and gratitude,<br>Joel &amp; Libina</p>
+</section>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
