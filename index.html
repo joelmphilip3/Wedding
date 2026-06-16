@@ -587,8 +587,8 @@
   }
 
   @keyframes pageFadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   .formal-invitation {
@@ -708,10 +708,10 @@
 
   /* ── FLOATING MUSIC BUTTON ── */
   .music-toggle {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    z-index: 999;
+    position: fixed !important;
+    right: max(18px, env(safe-area-inset-right)) !important;
+    bottom: max(18px, env(safe-area-inset-bottom)) !important;
+    z-index: 99999;
     width: 58px;
     height: 58px;
     display: inline-flex;
@@ -807,7 +807,7 @@
     .bible-verse { margin-top: 14px; padding: 14px 14px; font-size: 15px; line-height: 1.45; }
     section { padding: 64px 18px; }
     .premium-card, .family-card { padding: 28px 20px; }
-    .music-toggle { right: 14px; bottom: 14px; width: 52px; height: 52px; }
+    .music-toggle { right: max(14px, env(safe-area-inset-right)) !important; bottom: max(14px, env(safe-area-inset-bottom)) !important; width: 52px; height: 52px; }
     .music-icon { width: 34px; height: 34px; font-size: 19px; }
   }
 </style>
