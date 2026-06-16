@@ -545,12 +545,127 @@
   }
   .reveal.visible { opacity: 1; transform: none; }
 
+
+
+  .page-fade {
+    animation: pageFadeIn 1.1s ease both;
+  }
+
+  @keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .formal-invitation {
+    max-width: 760px;
+    margin: 0 auto 36px;
+    padding: 28px 26px;
+    border: 1px solid rgba(201,168,76,0.35);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.62);
+    box-shadow: 0 20px 55px rgba(74,17,32,0.08);
+  }
+
+  .formal-invitation .request-line {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--text-muted);
+    font-size: 22px;
+    line-height: 1.7;
+    margin-top: 14px;
+  }
+
+  .calendar-button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(107,30,46,0.35);
+    color: var(--wine-dark);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: rgba(107,30,46,0.05);
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .calendar-button:hover {
+    transform: translateY(-2px);
+    background: rgba(107,30,46,0.10);
+  }
+
+  .gallery-section {
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-section::before {
+    content: '';
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border: 1px solid rgba(201,168,76,0.16);
+    border-radius: 50%;
+    top: -170px;
+    right: -120px;
+    pointer-events: none;
+  }
+
+  .gallery-grid {
+    max-width: 1040px;
+    margin: 48px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .gallery-item {
+    background: rgba(255,255,255,0.72);
+    border: 1px solid rgba(201,168,76,0.38);
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: 0 18px 45px rgba(74,17,32,0.10);
+    transform: rotate(-0.5deg);
+  }
+
+  .gallery-item:nth-child(2) { transform: translateY(18px) rotate(0.4deg); }
+  .gallery-item:nth-child(3) { transform: rotate(-0.2deg); }
+
+  .gallery-item img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    filter: sepia(8%) contrast(1.02);
+  }
+
+  .blessing-card {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 26px;
+    border-top: 1px solid rgba(201,168,76,0.65);
+    border-bottom: 1px solid rgba(201,168,76,0.65);
+  }
+
   @media (max-width: 800px) {
     .family-lines,
-    .premium-details-grid {
+    .premium-details-grid,
+    .gallery-grid {
       grid-template-columns: 1fr;
       gap: 18px;
     }
+
+    .gallery-item,
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3) {
+      transform: none;
+    }
+
+    .gallery-item img { height: auto; max-height: 520px; object-fit: contain; }
 
     .family-and { font-size: 24px; }
   }
@@ -574,7 +689,7 @@
   }
 </style>
 </head>
-<body>
+<body class="page-fade">
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
@@ -635,11 +750,13 @@
 <!-- ═══ FAMILY INTRO ═══ -->
 <section class="details-section" style="background:var(--cream);">
   <div class="section-inner reveal">
-    <p class="section-eyebrow">Together With Their Families</p>
-    <h2 class="section-title">Two Hearts, One Journey</h2>
-    <p class="section-body">
-      With joy and gratitude, our families invite you to witness and celebrate the sacred union of Joel and Libina as they begin a beautiful new chapter together — in the presence of God, family, and cherished friends.
-    </p>
+    <div class="formal-invitation">
+      <p class="section-eyebrow">Together With Their Families</p>
+      <h2 class="section-title">Two Hearts, One Journey</h2>
+      <p class="request-line">
+        With joy and gratitude, our families request the honor of your presence as Joel and Libina are united in the sacrament of Holy Matrimony.
+      </p>
+    </div>
 
     <div class="family-lines">
       <div class="family-card reveal">
@@ -668,6 +785,7 @@
       <h3>Engagement</h3>
       <div class="premium-date">31st December 2026<br>11 AM</div>
       <p>Venue to be decided<br><span style="font-size:17px;">Details can be updated later</span></p>
+      <a class="calendar-button" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Joel+%26+Libina+Engagement&dates=20261231T053000Z/20261231T073000Z&details=Engagement+of+Joel+and+Libina.+Venue+to+be+decided.&location=Venue+to+be+decided" target="_blank" rel="noopener noreferrer">Add Engagement to Calendar</a>
     </div>
 
     <div class="premium-card reveal">
@@ -675,6 +793,8 @@
       <div class="premium-date">3rd January 2027<br>11 AM IST</div>
       <p>Mar Lazarus Orthodox Valiyapally<br>Pathanapuram, Kerala, India</p>
       <a class="map-button" href="https://www.google.com/maps/place/Mar+Lazarus+Orthodox+Valiyapally/@9.0977894,76.8513028,17z/data=!3m1!4b1!4m6!3m5!1s0x3b0672e94f188b1f:0x8c8735cf6f14fd15!8m2!3d9.0977894!4d76.8538777!16s%2Fg%2F1tdkf1wg?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">View Wedding Location</a>
+      <br>
+      <a class="calendar-button" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Joel+%26+Libina+Wedding+Ceremony&dates=20270103T053000Z/20270103T073000Z&details=Holy+Matrimony+of+Joel+and+Libina&location=Mar+Lazarus+Orthodox+Valiyapally%2C+Pathanapuram%2C+Kerala%2C+India" target="_blank" rel="noopener noreferrer">Add Wedding to Calendar</a>
     </div>
 
     <div class="premium-card reveal">
@@ -682,6 +802,32 @@
       <div class="premium-date">3rd January 2027<br>3 PM</div>
       <p>Morning Star Convention Center<br>Elamanoor, Kerala, India</p>
       <a class="map-button" href="https://www.google.com/maps/place/Morning+Star+Convention+Center,+Elamanoor/@34.2028252,-93.0388842,7z/data=!4m6!3m5!1s0x3b0612a3592bf1c3:0xaee73cf59d8015a6!8m2!3d9.1338875!4d76.8086252!16s%2Fg%2F11cnddn0tt?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">View Reception Location</a>
+      <br>
+      <a class="calendar-button" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Joel+%26+Libina+Reception&dates=20270103T093000Z/20270103T123000Z&details=Reception+celebration+for+Joel+and+Libina&location=Morning+Star+Convention+Center%2C+Elamanoor%2C+Kerala%2C+India" target="_blank" rel="noopener noreferrer">Add Reception to Calendar</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ GALLERY ═══ -->
+<section class="gallery-section">
+  <div class="section-inner reveal">
+    <p class="section-eyebrow">Our Journey</p>
+    <h2 class="section-title">Moments We Cherish</h2>
+    <p class="section-body">
+      A few memories from the beautiful story God has written for us.
+    </p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item reveal">
+      <img src="photo1.jpeg" alt="Joel and Libina photo 1">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="photo2.jpeg" alt="Joel and Libina photo 2">
+    </div>
+    <div class="gallery-item reveal">
+      <img src="photo3.jpeg" alt="Joel and Libina photo 3">
     </div>
   </div>
 </section>
@@ -689,8 +835,10 @@
 
 <!-- ═══ CLOSING ═══ -->
 <section class="closing-blessing">
-  <p>Your prayers, presence, and blessings mean the world to us.</p>
-  <p>With love and gratitude,<br>Joel &amp; Libina</p>
+  <div class="blessing-card">
+    <p>May the Lord bless this union and guide us in love, faith, and joy as we begin our life together.</p>
+    <p>With love and gratitude,<br>Joel &amp; Libina</p>
+  </div>
 </section>
 
 <!-- ═══ FOOTER ═══ -->
