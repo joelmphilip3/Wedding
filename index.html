@@ -33,7 +33,7 @@
   /* ── HERO ── */
   .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +41,7 @@
     text-align: center;
     background: linear-gradient(160deg, var(--wine-dark) 0%, var(--wine) 55%, #8C3050 100%);
     overflow: hidden;
-    padding: 60px 24px;
+    padding: 24px 24px 28px;
   }
 
   /* Petal canvas */
@@ -72,7 +72,32 @@
     border: 1px solid rgba(201,168,76,0.12);
   }
 
-  .hero-content { position: relative; z-index: 2; max-width: 700px; }
+  .hero-content { position: relative; z-index: 2; max-width: 960px; width: 100%; }
+
+  .bible-verse {
+    max-width: 760px;
+    margin: 0 auto 16px;
+    padding: 12px 16px;
+    border: 1px solid rgba(201,168,76,0.35);
+    border-radius: 6px;
+    background: rgba(255,255,255,0.07);
+    color: rgba(255,248,236,0.9);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(15px, 2.4vw, 18px);
+    line-height: 1.45;
+  }
+
+  .bible-verse strong {
+    display: block;
+    color: var(--gold-light);
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
 
   .eyebrow {
     font-family: 'Jost', sans-serif;
@@ -80,12 +105,12 @@
     letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--gold-light);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 
   .hero-names {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(52px, 10vw, 88px);
+    font-size: clamp(42px, 8vw, 74px);
     color: #FFF8EC;
     line-height: 1.0;
     font-weight: 400;
@@ -103,16 +128,40 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 20px;
     color: var(--gold-light);
-    margin-top: 18px;
+    margin-top: 10px;
     font-style: italic;
     letter-spacing: 1px;
+  }
+
+  .event-summary {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto 14px;
+  }
+
+  .event-pill {
+    border: 1px solid rgba(201,168,76,0.35);
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    padding: 10px 16px;
+    color: #FFF8EC;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .event-pill strong {
+    color: var(--gold-light);
+    font-weight: 500;
   }
 
   .gold-divider {
     width: 100px;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 22px auto;
+    margin: 14px auto;
   }
 
   .hero-venue {
@@ -124,12 +173,32 @@
     line-height: 2;
   }
 
+
+  .hero-photo {
+    margin: 16px auto 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-photo img {
+    display: block;
+    width: auto;
+    max-width: min(230px, 58vw);
+    height: auto;
+    max-height: 34vh;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 4px;
+    border: 1px solid rgba(201,168,76,0.55);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+  }
+
   /* ── COUNTDOWN ── */
   .countdown {
     display: flex;
-    gap: 28px;
+    gap: 14px;
     justify-content: center;
-    margin-top: 44px;
+    margin-top: 20px;
     flex-wrap: wrap;
   }
 
@@ -142,11 +211,11 @@
 
   .count-number {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 8vw, 64px);
+    font-size: clamp(28px, 5vw, 46px);
     color: #FFF8EC;
     font-weight: 600;
     line-height: 1;
-    min-width: 72px;
+    min-width: 62px;
     text-align: center;
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(201,168,76,0.3);
@@ -229,11 +298,11 @@
 
   .photo-frame img {
     display: block;
-    width: 100%;
-    max-width: 400px;
-    height: 520px;
-    object-fit: cover;
-    object-position: top center;
+    width: auto;
+    max-width: min(400px, 100%);
+    height: auto;
+    object-fit: contain;
+    object-position: center;
     border-radius: 2px;
     filter: sepia(10%) contrast(1.02);
   }
@@ -294,124 +363,6 @@
     line-height: 1.6;
   }
 
-  /* ── RSVP ── */
-  .rsvp-section {
-    background: linear-gradient(160deg, var(--wine-dark), var(--wine));
-    padding: 90px 24px;
-    text-align: center;
-  }
-
-  .rsvp-section .section-title { color: #FFF8EC; }
-  .rsvp-section .section-eyebrow { color: var(--gold-light); }
-  .rsvp-section .section-body { color: rgba(255,248,236,0.7); }
-
-  .rsvp-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 8px;
-    padding: 48px 40px;
-    max-width: 500px;
-    margin: 48px auto 0;
-    backdrop-filter: blur(10px);
-  }
-
-  .form-group {
-    margin-bottom: 22px;
-    text-align: left;
-  }
-
-  .form-group label {
-    display: block;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    margin-bottom: 8px;
-  }
-
-  .form-group input, .form-group select {
-    width: 100%;
-    padding: 14px 16px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 4px;
-    color: #FFF8EC;
-    font-family: 'Jost', sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .form-group input::placeholder { color: rgba(255,248,236,0.35); }
-
-  .form-group input:focus, .form-group select:focus {
-    border-color: var(--gold);
-  }
-
-  .form-group select option { background: var(--wine-dark); color: #FFF8EC; }
-
-  .btn-rsvp {
-    width: 100%;
-    padding: 16px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    border: none;
-    border-radius: 4px;
-    color: var(--wine-dark);
-    font-family: 'Jost', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: opacity 0.2s, transform 0.1s;
-  }
-
-  .btn-rsvp:hover { opacity: 0.9; transform: translateY(-1px); }
-  .btn-rsvp:active { transform: translateY(0); }
-  .btn-rsvp:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-
-  /* Attendee counter */
-  .counter-display {
-    margin-top: 48px;
-    text-align: center;
-  }
-
-  .counter-display .big-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 64px;
-    color: var(--gold-light);
-    line-height: 1;
-  }
-
-  .counter-display .counter-label {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: rgba(255,248,236,0.55);
-    margin-top: 8px;
-  }
-
-  /* Success message */
-  .success-msg {
-    display: none;
-    text-align: center;
-    padding: 28px;
-    border: 1px solid var(--gold);
-    border-radius: 6px;
-    margin-top: 24px;
-    background: rgba(201,168,76,0.1);
-  }
-
-  .success-msg p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    color: var(--gold-light);
-    font-style: italic;
-    line-height: 1.7;
-  }
-
   /* ── FOOTER ── */
   footer {
     background: var(--wine-dark);
@@ -435,9 +386,11 @@
   .reveal.visible { opacity: 1; transform: none; }
 
   @media (max-width: 600px) {
-    .rsvp-card { padding: 32px 22px; }
     .countdown { gap: 14px; }
-    .count-number { font-size: 36px; min-width: 56px; padding: 8px 10px; }
+    .count-number { font-size: 28px; min-width: 52px; padding: 7px 8px; }
+    .hero-photo img { width: auto; max-width: min(190px, 58vw); height: auto; max-height: 28vh; }
+    .hero-names { font-size: clamp(38px, 12vw, 56px); }
+    .event-pill { font-size: 10px; padding: 8px 12px; }
   }
 </style>
 </head>
@@ -448,17 +401,30 @@
   <canvas id="petalCanvas"></canvas>
   <div class="ring-ornament"></div>
   <div class="hero-content">
+    <div class="bible-verse">
+      <strong>1 Corinthians 13:4-8</strong>
+      Love is patient and kind; love does not envy or boast; it is not arrogant or rude. It does not insist on its own way; it is not irritable or resentful; it does not rejoice at wrongdoing, but rejoices with the truth. Love bears all things, believes all things, hopes all things, endures all things. Love never ends. As for prophecies, they will pass away; as for tongues, they will cease; as for knowledge, it will pass away
+    </div>
     <p class="eyebrow">You are cordially invited to celebrate</p>
+    <div class="event-summary">
+      <div class="event-pill"><strong>Engagement</strong> · 31.12.2026 · 11 AM</div>
+      <div class="event-pill"><strong>Wedding</strong> · 03.01.2027 · 11 AM</div>
+    </div>
     <h1 class="hero-names">
       Joel
       <span class="ampersand">&amp;</span>
       <span id="bride-name">Libina</span>
     </h1>
     <div class="gold-divider"></div>
-    <p class="hero-date">Sunday, the Third of January, Two Thousand &amp; Twenty‑Seven</p>
+    <p class="hero-date">03.01.2027</p>
     <p class="hero-venue" style="margin-top:10px;">
       Mar Lazarus Orthodox Valiyapally<br>Pathanapuram, Kerala, India
     </p>
+
+
+    <div class="hero-photo">
+      <img id="couple-photo" alt="The Happy Couple" />
+    </div>
 
     <div class="countdown" id="countdown">
       <div class="count-unit">
@@ -492,18 +458,6 @@
   </div>
 </section>
 
-<!-- ═══ PHOTO ═══ -->
-<section class="photo-section reveal">
-  <div class="section-inner">
-    <p class="section-eyebrow">The Couple</p>
-    <h2 class="section-title" style="color:var(--wine-dark);">Together</h2>
-    <div class="photo-grid">
-      <div class="photo-frame">
-        <img id="couple-photo" alt="The Happy Couple" />
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══ DETAILS ═══ -->
 <section class="details-section reveal">
@@ -515,7 +469,7 @@
     <div class="detail-card reveal">
       <span class="detail-icon">📅</span>
       <h3>Date</h3>
-      <p>Sunday<br>January 3rd, 2027</p>
+      <p>Sunday<br>03.01.2027<br>11 AM IST</p>
     </div>
     <div class="detail-card reveal">
       <span class="detail-icon">⛪</span>
@@ -530,46 +484,10 @@
   </div>
 </section>
 
-<!-- ═══ RSVP ═══ -->
-<section class="rsvp-section" id="rsvp">
-  <div class="section-inner">
-    <p class="section-eyebrow">Kindly Respond</p>
-    <h2 class="section-title">RSVP</h2>
-    <p class="section-body">Please let us know you'll be joining us to celebrate this joyous occasion.</p>
-
-    <div class="rsvp-card">
-      <div class="form-group">
-        <label>Your Full Name</label>
-        <input type="text" id="rsvp-name" placeholder="Enter your name" />
-      </div>
-      <div class="form-group">
-        <label>Number of Additional Guests</label>
-        <select id="rsvp-guests">
-          <option value="0">Just me (1 person)</option>
-          <option value="1">+1 Guest (2 total)</option>
-          <option value="2">+2 Guests (3 total)</option>
-          <option value="3">+3 Guests (4 total)</option>
-          <option value="4">+4 Guests (5 total)</option>
-          <option value="5">+5 Guests (6 total)</option>
-        </select>
-      </div>
-      <button class="btn-rsvp" id="rsvp-btn" onclick="submitRSVP()">Confirm My Attendance</button>
-
-      <div class="success-msg" id="success-msg">
-        <p>🕊️ Thank you! Your RSVP has been received.<br>We look forward to celebrating with you!</p>
-      </div>
-    </div>
-
-    <div class="counter-display">
-      <div class="big-num" id="attendee-count">0</div>
-      <div class="counter-label">Guests Attending</div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
-  <p>Joel &amp; Libina &nbsp;·&nbsp; January 3, 2027 &nbsp;·&nbsp; Pathanapuram, Kerala</p>
+  <p>Joel &amp; Libina &nbsp;·&nbsp; 03.01.2027 &nbsp;·&nbsp; Pathanapuram, Kerala</p>
 </footer>
 
 <script>
@@ -579,7 +497,7 @@ document.getElementById('couple-photo').src = 'data:image/jpeg;base64,' + PHOTO_
 
 // ── COUNTDOWN ──
 function updateCountdown() {
-  const wedding = new Date('2027-01-03T10:00:00+05:30');
+  const wedding = new Date('2027-01-03T11:00:00+05:30');
   const now = new Date();
   const diff = wedding - now;
   if (diff <= 0) {
@@ -656,60 +574,6 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
-
-// ── ATTENDEE COUNTER (localStorage) ──
-let totalAttendees = parseInt(localStorage.getItem('wedding_attendees') || '0');
-document.getElementById('attendee-count').textContent = totalAttendees;
-
-// ── RSVP SUBMIT ──
-async function submitRSVP() {
-  const name = document.getElementById('rsvp-name').value.trim();
-  const guests = parseInt(document.getElementById('rsvp-guests').value);
-  const totalForThisGroup = guests + 1;
-
-  if (!name) {
-    document.getElementById('rsvp-name').focus();
-    document.getElementById('rsvp-name').style.borderColor = '#ff6b6b';
-    setTimeout(() => document.getElementById('rsvp-name').style.borderColor = '', 2000);
-    return;
-  }
-
-  const btn = document.getElementById('rsvp-btn');
-  btn.disabled = true;
-  btn.textContent = 'Sending…';
-
-  // Update local counter
-  totalAttendees += totalForThisGroup;
-  localStorage.setItem('wedding_attendees', totalAttendees);
-  document.getElementById('attendee-count').textContent = totalAttendees;
-
-  // Send email via Claude API
-  try {
-    const prompt = `You are an email sending assistant. A wedding RSVP has been submitted. 
-Please compose a brief, warm confirmation email to funjoel333@gmail.com with:
-- Subject: "Wedding RSVP: ${name} (${totalForThisGroup} attending)"
-- Body confirming: Guest name: ${name}, Total people attending: ${totalForThisGroup} (${guests} additional guest(s)), Wedding: January 3rd 2027, Mar Lazarus Orthodox Valiyapally, Pathanapuram, Kerala. Also mention running total: ${totalAttendees} guests have RSVP'd so far.
-
-Since you cannot actually send emails, output the complete email text as if it were sent, formatted nicely. The response will be shown as a confirmation.`;
-
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 500,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-    // We don't need the response body — just show success
-  } catch(e) { /* silent fail */ }
-
-  // Show success
-  btn.textContent = '✓ RSVP Confirmed';
-  document.getElementById('success-msg').style.display = 'block';
-  document.getElementById('rsvp-name').value = '';
-  document.getElementById('rsvp-guests').value = '0';
-}
 
 // ── SCROLL REVEAL ──
 const revealEls = document.querySelectorAll('.reveal');
