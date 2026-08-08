@@ -80,7 +80,7 @@
 
   .bible-verse {
     max-width: 780px;
-    margin: 18px auto 0;
+    margin: 44px auto 0;
     padding: 18px 22px;
     border-top: 1px solid rgba(201,168,76,0.65);
     border-bottom: 1px solid rgba(201,168,76,0.65);
@@ -121,6 +121,28 @@
 
   .bible-verse::after { margin: 12px auto 0; }
 
+  .marriage-quote {
+    position: relative;
+    margin-top: 18px;
+    padding-top: 16px;
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(14px, 1.9vw, 16px);
+    line-height: 1.5;
+    font-style: normal;
+  }
+
+  .marriage-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 46px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(232,201,122,0.8), transparent);
+  }
+
   .family-lines {
     max-width: 760px;
     margin: 28px auto 0;
@@ -141,7 +163,7 @@
   .family-card h3 {
     font-family: 'Playfair Display', serif;
     color: var(--wine-dark);
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 400;
     margin-bottom: 8px;
   }
@@ -151,6 +173,30 @@
     color: var(--text-muted);
     font-size: 19px;
     line-height: 1.55;
+  }
+
+  .sibling-block {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(201,168,76,0.28);
+  }
+
+  .sibling-label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .sibling-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--wine-dark);
   }
 
   .family-and {
@@ -303,13 +349,13 @@
   }
 
   .event-pill {
-    border: 1px solid rgba(201,168,76,0.35);
-    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.26);
+    background: rgba(255,255,255,0.025);
     border-radius: 999px;
     padding: 10px 16px;
     color: #FFF8EC;
     font-size: 13px;
-    letter-spacing: 1.35px;
+    letter-spacing: 1.25px;
     text-transform: uppercase;
   }
 
@@ -584,7 +630,7 @@
   }
 
   .formal-invitation {
-    max-width: 760px;
+    max-width: 680px;
     margin: 0 auto 36px;
     padding: 28px 26px;
     border: 1px solid rgba(201,168,76,0.35);
@@ -594,10 +640,13 @@
   }
 
   .formal-invitation .request-line {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
     font-family: 'Cormorant Garamond', serif;
     color: var(--text-muted);
     font-size: 22px;
-    line-height: 1.7;
+    line-height: 1.82;
     margin-top: 14px;
   }
 
@@ -769,9 +818,12 @@
     .count-label { font-size: 9px; letter-spacing: 2px; }
     .event-summary { gap: 10px; margin-top: 16px; }
     .event-pill { font-size: 11px; padding: 9px 11px; letter-spacing: 0.9px; }
-    .bible-verse { margin-top: 14px; padding: 14px 14px; font-size: 15px; line-height: 1.45; }
+    .bible-verse { margin-top: 30px; padding: 14px 14px; font-size: 15px; line-height: 1.45; }
+    .marriage-quote { margin-top: 16px; padding-top: 14px; font-size: 14px; }
     section { padding: 64px 18px; }
     .premium-card, .family-card { padding: 28px 20px; }
+    .family-card h3 { font-size: 24px; }
+    .sibling-name { font-size: 17px; }
     .music-toggle { right: max(14px, env(safe-area-inset-right)) !important; bottom: max(14px, env(safe-area-inset-bottom)) !important; width: 42px; height: 42px; padding: 0; }
     .music-icon { width: 16px; height: 16px; font-size: 15px; }
   }
@@ -800,7 +852,7 @@
       <span id="bride-name">Libina</span>
     </h1>
     <div class="gold-divider"></div>
-    <p class="hero-date">3rd January 2027 · 11 AM</p>
+    <p class="hero-date">3rd January 2027 · 11:00 AM IST</p>
     <div class="hero-ceremony-card">
       <p class="hero-venue">
         Mar Lazarus Orthodox Valiyapally
@@ -836,13 +888,13 @@
 
     <div class="event-summary">
       <div class="event-pill"><strong>Engagement</strong> · 31.12.2026 · 11:30 AM IST</div>
-      <div class="event-pill"><strong>Wedding</strong> · 03.01.2027 · 11 AM IST</div>
+      <div class="event-pill"><strong>Wedding</strong> · 03.01.2027 · 11:00 AM IST</div>
     </div>
 
     <div class="bible-verse">
       <strong>Mark 10:9 &amp; 1 Corinthians 16:14</strong>
       “What God has joined together, let no one separate. Let all that you do be done in love.”
-      <div style="margin-top:12px; font-style:normal; color:var(--gold-light);">
+      <div class="marriage-quote">
         With God at the center of our marriage, we begin our forever together.
       </div>
     </div>
@@ -865,11 +917,19 @@
       <div class="family-card reveal">
         <h3>Joel Mathew Philip</h3>
         <p>Son of<br>Mr. Philip Mathew<br>and Mrs. Maryamma Philip</p>
+        <div class="sibling-block">
+          <span class="sibling-label">Brother</span>
+          <div class="sibling-name">Joshua Mathew Philip</div>
+        </div>
       </div>
       <div class="family-and">&amp;</div>
       <div class="family-card reveal">
         <h3>Libina Mary Lalu</h3>
         <p>Daughter of<br>Mr. Lalu George<br>and Mrs. Bindu Lalu</p>
+        <div class="sibling-block">
+          <span class="sibling-label">Brother</span>
+          <div class="sibling-name">Lance George Lalu</div>
+        </div>
       </div>
     </div>
   </div>
@@ -888,23 +948,23 @@
       <h3>Engagement</h3>
       <div class="premium-date">31st December 2026<br>11:30 AM IST</div>
       <p>St. Thomas Marthoma Church Auditorium<br>Kavungumprayar, Puramattom, Kerala, India</p>
-      <a class="map-button" href="https://www.google.com/maps/place/St.+Thomas+Marthoma+Church,+Kavungumprayar/@9.3947287,76.6546238,17z/data=!3m1!4b1!4m6!3m5!1s0x3b063b43f0538349:0x31ac1e2afd8a3daf!8m2!3d9.3947287!4d76.6572041!16s%2Fg%2F1yg6d446z?entry=ttu&amp;g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">View Engagement Location</a>
+      <a class="map-button" href="https://www.google.com/maps/place/St.+Thomas+Marthoma+Church,+Kavungumprayar/@9.3947287,76.6546238,17z/data=!3m1!4b1!4m6!3m5!1s0x3b063b43f0538349:0x31ac1e2afd8a3daf!8m2!3d9.3947287!4d76.6572041!16s%2Fg%2F1yg6d446z?entry=ttu&amp;g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Google Maps</a>
       <br>
     </div>
 
     <div class="premium-card reveal">
       <h3>Wedding Ceremony</h3>
-      <div class="premium-date">3rd January 2027<br>11 AM IST</div>
+      <div class="premium-date">3rd January 2027<br>11:00 AM IST</div>
       <p>Mar Lazarus Orthodox Valiyapally<br>Pathanapuram, Kerala, India</p>
-      <a class="map-button" href="https://www.google.com/maps/place/Mar+Lazarus+Orthodox+Valiyapally/@9.0977894,76.8513028,17z/data=!3m1!4b1!4m6!3m5!1s0x3b0672e94f188b1f:0x8c8735cf6f14fd15!8m2!3d9.0977894!4d76.8538777!16s%2Fg%2F1tdkf1wg?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">View Wedding Location</a>
+      <a class="map-button" href="https://www.google.com/maps/place/Mar+Lazarus+Orthodox+Valiyapally/@9.0977894,76.8513028,17z/data=!3m1!4b1!4m6!3m5!1s0x3b0672e94f188b1f:0x8c8735cf6f14fd15!8m2!3d9.0977894!4d76.8538777!16s%2Fg%2F1tdkf1wg?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Google Maps</a>
       <br>
     </div>
 
     <div class="premium-card reveal">
       <h3>Reception</h3>
-      <div class="premium-date">3rd January 2027<br>3 PM IST</div>
+      <div class="premium-date">3rd January 2027<br>3:00 PM IST</div>
       <p>Morning Star Convention Center<br>Elamanoor, Kerala, India</p>
-      <a class="map-button" href="https://www.google.com/maps/place/Morning+Star+Convention+Center,+Elamanoor/@34.2028252,-93.0388842,7z/data=!4m6!3m5!1s0x3b0612a3592bf1c3:0xaee73cf59d8015a6!8m2!3d9.1338875!4d76.8086252!16s%2Fg%2F11cnddn0tt?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">View Reception Location</a>
+      <a class="map-button" href="https://www.google.com/maps/place/Morning+Star+Convention+Center,+Elamanoor/@34.2028252,-93.0388842,7z/data=!4m6!3m5!1s0x3b0612a3592bf1c3:0xaee73cf59d8015a6!8m2!3d9.1338875!4d76.8086252!16s%2Fg%2F11cnddn0tt?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Google Maps</a>
       <br>
     </div>
   </div>
