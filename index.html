@@ -308,8 +308,8 @@
     border-radius: 999px;
     padding: 10px 16px;
     color: #FFF8EC;
-    font-size: 12px;
-    letter-spacing: 1.5px;
+    font-size: 13px;
+    letter-spacing: 1.35px;
     text-transform: uppercase;
   }
 
@@ -688,10 +688,11 @@
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    gap: 9px;
     border: 1px solid rgba(232,201,122,0.78);
-    border-radius: 999px;
-    padding: 12px 18px;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    padding: 0;
     background: rgba(74,17,32,0.94);
     color: #FFF8EC;
     cursor: pointer;
@@ -720,11 +721,6 @@
     color: var(--gold-light);
     font-size: 16px;
     line-height: 1;
-  }
-
-  .music-text {
-    display: inline-block;
-    white-space: nowrap;
   }
 
   .music-toggle.playing .music-icon {
@@ -772,11 +768,11 @@
     .count-number { font-size: 25px; min-width: 48px; padding: 7px 8px; }
     .count-label { font-size: 9px; letter-spacing: 2px; }
     .event-summary { gap: 10px; margin-top: 16px; }
-    .event-pill { font-size: 9px; padding: 8px 10px; letter-spacing: 1px; }
+    .event-pill { font-size: 11px; padding: 9px 11px; letter-spacing: 0.9px; }
     .bible-verse { margin-top: 14px; padding: 14px 14px; font-size: 15px; line-height: 1.45; }
     section { padding: 64px 18px; }
     .premium-card, .family-card { padding: 28px 20px; }
-    .music-toggle { right: max(14px, env(safe-area-inset-right)) !important; bottom: max(14px, env(safe-area-inset-bottom)) !important; padding: 11px 14px; font-size: 10px; letter-spacing: 1.5px; }
+    .music-toggle { right: max(14px, env(safe-area-inset-right)) !important; bottom: max(14px, env(safe-area-inset-bottom)) !important; width: 42px; height: 42px; padding: 0; }
     .music-icon { width: 16px; height: 16px; font-size: 15px; }
   }
 </style>
@@ -785,8 +781,7 @@
 
 
 <button class="music-toggle muted" id="musicToggle" type="button" aria-label="Play wedding music" aria-pressed="false">
-  <span class="music-icon" id="musicIcon">♪</span>
-  <span class="music-text" id="musicText">Play Music</span>
+  <span class="music-icon" id="musicIcon">▶</span>
 </button>
 <audio id="weddingMusic" src="wedding-music.mp3" preload="none" loop></audio>
 
@@ -812,7 +807,7 @@
         <span>Pathanapuram, Kerala, India</span>
       </p>
       <p class="hero-blessing">
-        Wedding ceremony with the blessings of<br><span>H.G. Dr. Yuhanon Mar Diascoros</span>
+        Wedding ceremony with the blessings of<br><span>H.G. Dr. Yuhanon Mar Diascoros Metropolitan</span>
       </p>
     </div>
 
@@ -840,13 +835,16 @@
     </div>
 
     <div class="event-summary">
-      <div class="event-pill"><strong>Engagement</strong> · 31.12.2026 · 11 AM</div>
-      <div class="event-pill"><strong>Wedding</strong> · 03.01.2027 · 11 AM</div>
+      <div class="event-pill"><strong>Engagement</strong> · 31.12.2026 · 11:30 AM IST</div>
+      <div class="event-pill"><strong>Wedding</strong> · 03.01.2027 · 11 AM IST</div>
     </div>
 
     <div class="bible-verse">
-      <strong>1 Corinthians 13:4-8</strong>
-      Love is patient and kind; love does not envy or boast; love is not arrogant or rude. It does not insist on its own way; it is not irritable or resentful; it does not rejoice at wrongdoing, but rejoices with the truth. Love bears all things, believes all things, hopes all things, endures all things. Love never ends.
+      <strong>Mark 10:9 &amp; 1 Corinthians 16:14</strong>
+      “What God has joined together, let no one separate. Let all that you do be done in love.”
+      <div style="margin-top:12px; font-style:normal; color:var(--gold-light);">
+        With God at the center of our marriage, we begin our forever together.
+      </div>
     </div>
 
   </div>
@@ -859,18 +857,18 @@
       <p class="section-eyebrow">Together With Their Families</p>
       <h2 class="section-title">Two Hearts, One Journey</h2>
       <p class="request-line">
-        With joy and gratitude, our families request the honor of your presence as Joel and Libina are united in the sacrament of Holy Matrimony.
+        With joyful hearts and grateful spirits, our families request the honor of your presence as Joel and Libina come before God and their loved ones to be united in the sacrament of Holy Matrimony, beginning their life together in faith, love, and His grace.
       </p>
     </div>
 
     <div class="family-lines">
       <div class="family-card reveal">
-        <h3>Joel</h3>
+        <h3>Joel Mathew Philip</h3>
         <p>Son of<br>Mr. Philip Mathew<br>and Mrs. Maryamma Philip</p>
       </div>
       <div class="family-and">&amp;</div>
       <div class="family-card reveal">
-        <h3>Libina</h3>
+        <h3>Libina Mary Lalu</h3>
         <p>Daughter of<br>Mr. Lalu George<br>and Mrs. Bindu Lalu</p>
       </div>
     </div>
@@ -888,8 +886,10 @@
   <div class="premium-details-grid">
     <div class="premium-card reveal">
       <h3>Engagement</h3>
-      <div class="premium-date">31st December 2026<br>11 AM</div>
-      <p>Venue to be decided<br><span style="font-size:17px;">Details can be updated later</span></p>
+      <div class="premium-date">31st December 2026<br>11:30 AM IST</div>
+      <p>St. Thomas Marthoma Church Auditorium<br>Kavungumprayar, Puramattom, Kerala, India</p>
+      <a class="map-button" href="https://www.google.com/maps/place/St.+Thomas+Marthoma+Church,+Kavungumprayar/@9.3947287,76.6546238,17z/data=!3m1!4b1!4m6!3m5!1s0x3b063b43f0538349:0x31ac1e2afd8a3daf!8m2!3d9.3947287!4d76.6572041!16s%2Fg%2F1yg6d446z?entry=ttu&amp;g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">View Engagement Location</a>
+      <br>
     </div>
 
     <div class="premium-card reveal">
@@ -902,7 +902,7 @@
 
     <div class="premium-card reveal">
       <h3>Reception</h3>
-      <div class="premium-date">3rd January 2027<br>3 PM</div>
+      <div class="premium-date">3rd January 2027<br>3 PM IST</div>
       <p>Morning Star Convention Center<br>Elamanoor, Kerala, India</p>
       <a class="map-button" href="https://www.google.com/maps/place/Morning+Star+Convention+Center,+Elamanoor/@34.2028252,-93.0388842,7z/data=!4m6!3m5!1s0x3b0612a3592bf1c3:0xaee73cf59d8015a6!8m2!3d9.1338875!4d76.8086252!16s%2Fg%2F11cnddn0tt?entry=ttu&amp;g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">View Reception Location</a>
       <br>
@@ -960,7 +960,6 @@
 // ── MUSIC TOGGLE ──
 const weddingMusic = document.getElementById('weddingMusic');
 const musicToggle = document.getElementById('musicToggle');
-const musicText = document.getElementById('musicText');
 const musicIcon = document.getElementById('musicIcon');
 
 weddingMusic.volume = 0.55;
@@ -973,7 +972,6 @@ musicToggle.addEventListener('click', async () => {
       musicToggle.classList.remove('muted');
       musicToggle.setAttribute('aria-pressed', 'true');
       musicToggle.setAttribute('aria-label', 'Pause wedding music');
-      musicText.textContent = 'Pause Music';
       musicIcon.textContent = '❚❚';
     } else {
       weddingMusic.pause();
@@ -981,11 +979,9 @@ musicToggle.addEventListener('click', async () => {
       musicToggle.classList.add('muted');
       musicToggle.setAttribute('aria-pressed', 'false');
       musicToggle.setAttribute('aria-label', 'Play wedding music');
-      musicText.textContent = 'Play Music';
-      musicIcon.textContent = '♪';
+      musicIcon.textContent = '▶';
     }
   } catch (error) {
-    musicText.textContent = 'Music Unavailable';
     musicToggle.classList.remove('playing');
     musicToggle.classList.add('muted');
     console.warn('Music could not be played. Make sure wedding-music.mp3 is uploaded in the same GitHub folder as index.html.', error);
